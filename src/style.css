@@ -1,0 +1,8 @@
+:root {
+  --dark-blue: #293b51;
+  --off-white: #f8f7f6;
+
+  color: var(--off-white);
+  background-color: var(--dark-blue);
+  font-family: 'Nunito Sans', sans-serif;
+}
