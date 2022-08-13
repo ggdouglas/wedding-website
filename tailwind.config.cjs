@@ -5,8 +5,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'regal-blue': '#293b51',
         'off-white': '#f8f7f6',
+        'regal-blue': '#293b51',
       },
       fontFamily: {
         sans: ['Nunito Sans', ...defaultTheme.fontFamily.sans],
