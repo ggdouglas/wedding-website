@@ -1,0 +1,21 @@
+---
+export interface Props {
+  active: boolean;
+  href: string;
+  title: string;
+}
+
+const { active, href, title } = Astro.props as Props;
+---
+
+<li class="px-2">
+  <a class="py-2" href={href}>
+    <span
+      class={`px-2 pt-2 pb-1 transition-colors duration-200 border-b-2 hover:border-current ${
+        active ? 'border-current' : 'border-transparent'
+      }`}
+    >
+      {title}
+    </span>
+  </a>
+</li>

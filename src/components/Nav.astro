@@ -1,0 +1,23 @@
+---
+import NavLink from '../components/NavLink.astro';
+
+const pathname = new URL(Astro.request.url).pathname;
+
+const HOME = '/';
+const PHOTOS = '/photos';
+const TRAVEL = '/travel';
+const THINGS_TO_DO = '/things-to-do';
+---
+
+<nav class="mt-8 tracking-sm">
+  <ul class="flex px-4 py-2">
+    <NavLink title="Home" href={HOME} active={pathname === HOME} />
+    <NavLink title="Photos" href={PHOTOS} active={pathname === PHOTOS} />
+    <NavLink title="Travel" href={TRAVEL} active={pathname === TRAVEL} />
+    <NavLink
+      title="Things to Do"
+      href={THINGS_TO_DO}
+      active={pathname === THINGS_TO_DO}
+    />
+  </ul>
+</nav>
