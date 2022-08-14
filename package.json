@@ -7,6 +7,7 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "check": "astro check",
     "astro": "astro"
   },
   "devDependencies": {
@@ -16,6 +17,7 @@
     "prettier-plugin-astro": "^0.5.0"
   },
   "dependencies": {
-    "@fontsource/nunito-sans": "^4.5.9"
+    "@fontsource/nunito-sans": "^4.5.9",
+    "astro-seo": "^0.5.1"
   }
 }

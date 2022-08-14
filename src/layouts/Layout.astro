@@ -1,16 +1,18 @@
 ---
-export interface Props {
-  title: string;
-}
+import { SEO } from 'astro-seo';
 
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const { title } = Astro.props as Props;
-
 import '@fontsource/nunito-sans/400.css';
 import '@fontsource/nunito-sans/600.css';
 import '@fontsource/nunito-sans/700.css';
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
@@ -19,8 +21,10 @@ import '@fontsource/nunito-sans/700.css';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <SEO
+      title={title}
+      description="Welcome to Kristen Sween and Greg Douglas's Wedding Website!"
+    />
   </head>
   <body class="antialiased bg-regal-blue text-off-white">
     <div class="flex flex-col items-center min-h-screen">
