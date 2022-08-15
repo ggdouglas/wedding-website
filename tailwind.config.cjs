@@ -1,8 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-	theme: {
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  theme: {
     extend: {
       colors: {
         'off-white': '#f8f7f6',
@@ -33,5 +33,5 @@ module.exports = {
       },
     },
   },
-	plugins: [],
-}
+  plugins: [],
+};
