@@ -1,7 +1,66 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+
+import cosi from '../assets/cosi.webp';
+import germanVillage from '../assets/german-village.webp';
+import granville from '../assets/granville.webp';
+import katzingers from '../assets/katzingers.webp';
+import northMarket from '../assets/north-market.webp';
+import shortNorth from '../assets/short-north.webp';
+import theBookLoft from '../assets/the-book-loft.webp';
 ---
 
 <Layout title="Kristen & Greg | Things to Do">
-  <div>Things to do</div>
+  <div class="max-w-2xl px-5 mx-auto space-y-3 text-center">
+    <Card
+      title="Short North"
+      image={shortNorth}
+      alt=""
+      description="Lots of art galleries, shops, bars, and restaurants to check out!"
+      website="https://www.experiencecolumbus.com/neighborhoods/short-north"
+    />
+    <Card
+      title="German Village"
+      image={germanVillage}
+      alt=""
+      website="https://www.experiencecolumbus.com/neighborhoods/german-village-and-brewery-district"
+    />
+    <Card
+      title="The Book Loft"
+      image={theBookLoft}
+      alt=""
+      address="631 S 3rd St, Columbus, OH"
+      website="https://www.bookloft.com"
+    />
+    <Card
+      title="COSI"
+      image={cosi}
+      alt=""
+      address="333 West Broad St. Columbus, OH"
+      website="https://cosi.org"
+    />
+    <Card
+      title="Katzinger's Delicatessen"
+      image={katzingers}
+      alt=""
+      address="475 S 3rd St, Columbus, OH"
+      description="The best deli in Columbus! Katzinger's is located in German Village, so grab some lunch and go explore!"
+      website="https://katzingers.com"
+    />
+    <Card
+      title="North Market"
+      image={northMarket}
+      alt=""
+      address="59 Spruce St, Columbus, OH"
+      description="North Market is a large, covered open market. It's a great place to stop for a bite to eat! For our DC friends, think Union Market. Fun fact - Jeni opened up her first first ice cream shop in a booth at North Market!"
+      website="https://northmarket.org"
+    />
+    <Card
+      title="Granville, Ohio"
+      image={granville}
+      alt=""
+      website="https://www.granville.oh.us"
+    />
+  </div>
 </Layout>

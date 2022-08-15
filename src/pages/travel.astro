@@ -1,7 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+
+import hotelLeveque from '../assets/hotel-leveque.webp';
+import acHotel from '../assets/ac-hotel.webp';
 ---
 
 <Layout title="Kristen & Greg | Travel">
-  <div>Travel</div>
+  <div class="max-w-2xl px-5 mx-auto space-y-3 text-center">
+    <Card
+      title="Hotel Leveque"
+      image={hotelLeveque}
+      alt=""
+      address="50 W Broad St, Columbus, OH 43215, USA"
+      phone="(614) 224-9500"
+      website="https://www.hotellevequecolumbus.com"
+    />
+    <Card
+      title="AC Hotel by Marriott"
+      image={acHotel}
+      alt=""
+      address="517 Park St, Columbus, OH 43215, USA"
+      phone="(614) 227-6100"
+      website="https://www.marriott.com/hotels/travel/cmhad-ac-hotel-columbus-downtown"
+    />
+  </div>
 </Layout>
