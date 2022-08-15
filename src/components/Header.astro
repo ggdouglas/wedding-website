@@ -1,8 +1,15 @@
 ---
-import banner from '../assets/banner.webp';
 import Nav from '../components/Nav.astro';
+
+import banner from '../assets/banner.webp';
+export interface Props {
+  page: string;
+}
+
+const { page } = Astro.props as Props;
 ---
 
+<div class="h-14 md:hidden"></div>
 <img class="w-full select-none max-w-7xl" src={banner} draggable="false" alt=""
 />
 <header class="text-center pb-2.5 px-[4%]">
@@ -15,4 +22,4 @@ import Nav from '../components/Nav.astro';
     Saturday, March 11, 2023 • Columbus, OH
   </div>
 </header>
-<Nav />
+<Nav title={page} />

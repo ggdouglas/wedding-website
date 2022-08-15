@@ -7,10 +7,37 @@ const HOME = '/';
 const OUR_STORY = '/our-story';
 const TRAVEL = '/travel';
 const THINGS_TO_DO = '/things-to-do';
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props as Props;
 ---
 
-<nav class="mt-8 tracking-sm">
-  <ul class="flex px-4 py-2">
+<div
+  class="fixed inset-x-0 top-0 z-10 flex items-center justify-center md:hidden bg-regal-blue h-14"
+>
+  <h2 class="text-2xl font-bold uppercase tracking-lg">{title}</h2>
+</div>
+
+<button
+  id="nav-toggle"
+  class="fixed z-20 w-10 h-10 bg-no-repeat bg-contain nav-toggle top-2 right-2 md:hidden"
+  aria-controls="nav"
+  aria-expanded="false"
+>
+  <span class="sr-only">Navigation</span>
+</button>
+
+<nav
+  id="nav"
+  class="fixed inset-0 z-10 pt-[20vh] md:pt-0 md:mt-8 tracking-sm bg-regal-blue md:relative nav"
+  data-visible="false"
+>
+  <ul
+    class="flex flex-col gap-6 px-4 py-2 text-xl text-center md:gap-4 md:flex-row"
+  >
     <NavLink title="Home" href={HOME} active={pathname === HOME} />
     <NavLink title="Our Story" href={OUR_STORY} active={pathname === OUR_STORY}
     />
@@ -22,3 +49,42 @@ const THINGS_TO_DO = '/things-to-do';
     />
   </ul>
 </nav>
+
+<style>
+  @media (max-width: 767px) {
+    .nav {
+      display: none;
+    }
+  }
+
+  .nav[data-visible='true'] {
+    display: block;
+  }
+
+  .nav-toggle {
+    background-image: url('/menu.svg');
+  }
+
+  .nav-toggle[aria-expanded='true'] {
+    background-image: url('/close.svg');
+  }
+</style>
+
+<script>
+  const nav = document.getElementById('nav');
+  const navToggle = document.getElementById('nav-toggle');
+
+  navToggle?.addEventListener('click', () => {
+    const visibility = nav?.getAttribute('data-visible');
+
+    if (visibility === 'false') {
+      nav?.setAttribute('data-visible', 'true');
+      navToggle?.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('overflow-hidden');
+    } else {
+      nav?.setAttribute('data-visible', 'false');
+      navToggle?.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('overflow-hidden');
+    }
+  });
+</script>
