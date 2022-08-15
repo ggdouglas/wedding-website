@@ -8,5 +8,5 @@ import compress from 'astro-compress';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://kristenandgreg.wedding',
-  integrations: [tailwind(), image(), sitemap(), compress()],
+  integrations: [tailwind(), image(), sitemap(), compress({ img: false })],
 });
