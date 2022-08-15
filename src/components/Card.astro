@@ -18,11 +18,11 @@ const { address, alt, description, image, phone, title, website } =
 ---
 
 <div class="px-5 pt-1 text-center">
-  <h4
+  <h2
     class="uppercase font-bold my-7 text-2xl sm:text-3.5xl leading-none tracking-lg"
   >
     {title}
-  </h4>
+  </h2>
   <Image src={image} aspectRatio="4:3" alt={alt} />
   {
     (address || phone) && (
