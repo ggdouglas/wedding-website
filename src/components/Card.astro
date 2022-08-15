@@ -1,11 +1,13 @@
 ---
+import { Image } from '@astrojs/image/components';
+
 import Button from './Button.astro';
 
 export interface Props {
   address?: string;
   alt: string;
   description?: string;
-  image: string;
+  image: ImageMetadata;
   phone?: string;
   title: string;
   website: string;
@@ -21,7 +23,7 @@ const { address, alt, description, image, phone, title, website } =
   >
     {title}
   </h4>
-  <img src={image} alt={alt} />
+  <Image src={image} aspectRatio="4:3" alt={alt} />
   {
     (address || phone) && (
       <div class="my-4 space-y-2 leading-none sm:text-xl tracking-sm">

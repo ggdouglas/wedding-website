@@ -1,4 +1,6 @@
 ---
+import { Image } from '@astrojs/image/components';
+
 import Layout from '../layouts/Layout.astro';
 
 import scroll from '../assets/scroll.gif';
@@ -43,8 +45,9 @@ import scroll from '../assets/scroll.gif';
     More info coming soon!
   </h3>
   <div class="max-w-xs p-4 mx-auto sm:max-w-sm">
-    <img
+    <Image
       src={scroll}
+      aspectRatio={446 / 480}
       draggable="false"
       alt="Animated banner with the words SAVE THE DATE"
     />

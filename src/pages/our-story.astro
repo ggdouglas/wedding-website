@@ -1,4 +1,6 @@
 ---
+import { Image } from '@astrojs/image/components';
+
 import Layout from '../layouts/Layout.astro';
 
 import norway from '../assets/norway.jpeg';
@@ -6,6 +8,11 @@ import norway from '../assets/norway.jpeg';
 
 <Layout page="Our Story">
   <div class="py-16">
-    <img class="max-w-xs rounded-full sm:max-w-sm" src={norway} />
+    <Image
+      class="max-w-xs rounded-full sm:max-w-sm"
+      src={norway}
+      aspectRatio="1:1"
+      alt="Picture of Greg and Kristen on a boat in Norway."
+    />
   </div>
 </Layout>
