@@ -1,12 +1,14 @@
 ---
 import NavLink from '@components/NavLink.astro';
 
-const pathname = new URL(Astro.request.url).pathname;
+const { pathname } = new URL(Astro.request.url);
 
-const HOME = '/';
-const OUR_STORY = '/our-story';
-const TRAVEL = '/travel';
-const THINGS_TO_DO = '/things-to-do';
+const pages = [
+  { path: '/', title: 'Home' },
+  // { path: '/our-story', title: 'Our Story' },
+  // { path: '/travel', title: 'Travel' },
+  // { path: '/things-to-do', title: 'Things to Do' },
+];
 
 export interface Props {
   title: string;
@@ -38,15 +40,11 @@ const { title } = Astro.props as Props;
   <ul
     class="flex flex-col gap-6 px-4 py-2 text-xl text-center md:gap-4 md:flex-row"
   >
-    <NavLink title="Home" href={HOME} active={pathname === HOME} />
-    <NavLink title="Our Story" href={OUR_STORY} active={pathname === OUR_STORY}
-    />
-    <NavLink title="Travel" href={TRAVEL} active={pathname === TRAVEL} />
-    <NavLink
-      title="Things to Do"
-      href={THINGS_TO_DO}
-      active={pathname === THINGS_TO_DO}
-    />
+    {
+      pages.map(({ path, title }) => (
+        <NavLink title={title} href={path} active={path === pathname} />
+      ))
+    }
   </ul>
 </nav>
 
