@@ -1,0 +1,39 @@
+---
+import { Image } from '@astrojs/image/components';
+import Layout from '@layouts/Layout.astro';
+
+import venue from '@assets/high-line-car-house.webp';
+---
+
+<Layout page="Schedule">
+  <div
+    class="text-center p-4 text-lg sm:text-2xl tracking-wide bg-slate-800 sm:rounded"
+  >
+    Check back here soon. More details to follow!
+  </div>
+  <div class="px-8 py-4 text-center tracking-wide">
+    <h2 class="py-2 text-3xl">Friday, March 10th</h2>
+    <h3 class="py-3 text-xl">Welcome Drinks</h3>
+    <p class="mx-auto max-w-prose leading-7 opacity-80">
+      If you arrive early, please join us for welcome drinks Friday evening.
+    </p>
+  </div>
+  <div class="px-8 py-4 text-center tracking-wide">
+    <h2 class="py-2 text-3xl">Saturday, March 11th</h2>
+    <Image
+      class="mx-auto max-w-sm my-4 rounded"
+      src={venue}
+      aspectRatio="1:1"
+      alt=""
+    />
+    <h3 class="py-3 text-xl">Wedding & Reception</h3>
+    <p class="mx-auto max-w-prose leading-7 opacity-80">
+      The wedding and reception will be held at
+      {' '}
+      <a class="text- underline" href="https://www.highlinecarhouse.com">
+        High Line Car House
+      </a>
+      . There will be transportation provided to and from the venue.
+    </p>
+  </div>
+</Layout>

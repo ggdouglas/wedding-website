@@ -1,9 +1,9 @@
 ---
+import { Image } from '@astrojs/image/components';
 import Layout from '@layouts/Layout.astro';
-import Card from '@components/Card.astro';
+import Button from '@components/Button.astro';
 
 import cosi from '@assets/cosi.webp';
-import germanVillage from '@assets/german-village.webp';
 import granville from '@assets/granville.webp';
 import katzingers from '@assets/katzingers.webp';
 import northMarket from '@assets/north-market.webp';
@@ -13,54 +13,135 @@ import theBookLoft from '@assets/the-book-loft.webp';
 
 <Layout page="Things to Do">
   <div class="max-w-2xl px-5 mx-auto space-y-3 text-center">
-    <Card
-      title="Short North"
-      image={shortNorth}
-      alt=""
-      description="Lots of art galleries, shops, bars, and restaurants to check out!"
-      website="https://www.experiencecolumbus.com/neighborhoods/short-north"
-    />
-    <Card
-      title="German Village"
-      image={germanVillage}
-      alt=""
-      website="https://www.experiencecolumbus.com/neighborhoods/german-village-and-brewery-district"
-    />
-    <Card
-      title="The Book Loft"
-      image={theBookLoft}
-      alt=""
-      address="631 S 3rd St, Columbus, OH"
-      website="https://www.bookloft.com"
-    />
-    <Card
-      title="COSI"
-      image={cosi}
-      alt=""
-      address="333 West Broad St. Columbus, OH"
-      website="https://cosi.org"
-    />
-    <Card
-      title="Katzinger's Delicatessen"
-      image={katzingers}
-      alt=""
-      address="475 S 3rd St, Columbus, OH"
-      description="The best deli in Columbus! Katzinger's is located in German Village, so grab some lunch and go explore!"
-      website="https://katzingers.com"
-    />
-    <Card
-      title="North Market"
-      image={northMarket}
-      alt=""
-      address="59 Spruce St, Columbus, OH"
-      description="North Market is a large, covered open market. It's a great place to stop for a bite to eat! For our DC friends, think Union Market. Fun fact - Jeni opened up her first first ice cream shop in a booth at North Market!"
-      website="https://northmarket.org"
-    />
-    <Card
-      title="Granville, Ohio"
-      image={granville}
-      alt=""
-      website="https://www.granville.oh.us"
-    />
+    <div class="px-5 pt-1 text-center">
+      <h2
+        class="uppercase font-bold my-7 text-2xl sm:text-3.5xl leading-normal tracking-lg"
+      >
+        Short North
+      </h2>
+      <Image src={shortNorth} aspectRatio="4:3" alt="" />
+      <div class="my-4 space-y-2 leading-none sm:text-xl tracking-sm">
+        <a href="https://goo.gl/maps/usDtLNoHyZVnHwqk6" target="_blank">
+          N. High Street, Columbus, OH
+        </a>
+      </div>
+      <p class="my-8 leading-7 opacity-90 tracking-wide">
+        This arts district neighborhood in Columbus has lots of galleries,
+        shops, bars, and restaurants to check out!
+      </p>
+      <div class="flex justify-center my-5">
+        <Button href="https://shortnorth.org">Website</Button>
+      </div>
+    </div>
+
+    <div class="px-5 pt-1 text-center">
+      <h2
+        class="uppercase font-bold my-7 text-2xl sm:text-3.5xl leading-normal tracking-lg"
+      >
+        The Book Loft
+      </h2>
+      <Image src={theBookLoft} aspectRatio="4:3" alt="" />
+      <div class="my-4 space-y-2 leading-none sm:text-xl tracking-sm">
+        <a href="https://goo.gl/maps/wcm2jPhsVKWBj24x8" target="_blank">
+          631 S 3rd St, Columbus, OH
+        </a>
+      </div>
+      <p class="my-8 leading-7 opacity-90 tracking-wide">
+        The Book Loft is a large, independent bookstore. Grab a coffee from
+        Stauf's coffee shop next door and explore over thirty rooms of books!
+      </p>
+      <div class="flex justify-center my-5">
+        <Button href="https://www.bookloft.com">Website</Button>
+      </div>
+    </div>
+
+    <div class="px-5 pt-1 text-center">
+      <h2
+        class="uppercase font-bold my-7 text-2xl sm:text-3.5xl leading-normal tracking-lg"
+      >
+        Katzinger's Delicatessen
+      </h2>
+      <Image src={katzingers} aspectRatio="4:3" alt="" />
+      <div class="my-4 space-y-2 leading-none sm:text-xl tracking-sm">
+        <a href="https://goo.gl/maps/PgLpbhXnStsjnS9c7" target="_blank">
+          475 S 3rd St, Columbus, OH
+        </a>
+      </div>
+      <p class="my-8 leading-7 opacity-90 tracking-wide">
+        The best deli in Columbus! Katzinger's is in German Village, so grab
+        some lunch and explore one of our favorite neighborhoods in the city!
+      </p>
+      <div class="flex justify-center my-5">
+        <Button href="https://katzingers.com">Website</Button>
+      </div>
+    </div>
+
+    <div class="px-5 pt-1 text-center">
+      <h2
+        class="uppercase font-bold my-7 text-2xl sm:text-3.5xl leading-normal tracking-lg"
+      >
+        COSI
+      </h2>
+      <Image src={cosi} aspectRatio="4:3" alt="" />
+      <div class="my-4 space-y-2 leading-none sm:text-xl tracking-sm">
+        <a href="https://goo.gl/maps/2DE1EAs1kuxb4ayU7" target="_blank">
+          333 West Broad St. Columbus, OH
+        </a>
+      </div>
+      <p class="my-8 leading-7 opacity-90 tracking-wide">
+        The Center of Science and Industry (COSI) is a science museum in
+        downtown Columbus - great for kids!
+      </p>
+      <div class="flex justify-center my-5">
+        <Button href="https://cosi.org">Website</Button>
+      </div>
+    </div>
+
+    <div class="px-5 pt-1 text-center">
+      <h2
+        class="uppercase font-bold my-7 text-2xl sm:text-3.5xl leading-normal tracking-lg"
+      >
+        North Market
+      </h2>
+      <Image src={northMarket} aspectRatio="4:3" alt="" />
+      <div class="my-4 space-y-2 leading-none sm:text-xl tracking-sm">
+        <a href="https://g.page/North-market-downtown" target="_blank">
+          59 Spruce St, Columbus, OH
+        </a>
+      </div>
+      <p class="my-8 leading-7 opacity-90 tracking-wide">
+        North Market is a large, covered open market. It's a great place to stop
+        for a bite to eat! For our DC friends, think Union Market. Fun fact -
+        Jeni opened up her first first ice cream shop in a booth at North
+        Market!
+      </p>
+      <div class="flex justify-center my-5">
+        <Button href="https://northmarket.org">Website</Button>
+      </div>
+    </div>
+
+    <div class="px-5 pt-1 text-center">
+      <h2
+        class="uppercase font-bold my-7 text-2xl sm:text-3.5xl leading-normal tracking-lg"
+      >
+        Granville, Ohio
+      </h2>
+      <Image src={granville} aspectRatio="4:3" alt="" />
+      <div class="my-4 space-y-2 leading-none sm:text-xl tracking-sm">
+        <a href="https://goo.gl/maps/jd4wgTCq85aEtRuR8" target="_blank">
+          Granville, Ohio
+        </a>
+      </div>
+      <p class="my-8 leading-7 opacity-90 tracking-wide">
+        If you have a car and you're down for a day trip, check out Kristen's
+        hometown! Granville has lots of cute shops and restaurants. Green Velvet
+        and Kussmaul Gallery are great shops, and Mai Chau/Three Tigers brewery,
+        Whit's Frozen Custard, Alfie's, and Seek-No-Further Cidery are some fun
+        options for food and drinks!
+      </p>
+      <div class="flex justify-center my-5">
+        <Button href="https://www.granville.oh.us">Website</Button>
+      </div>
+    </div>
   </div>
 </Layout>

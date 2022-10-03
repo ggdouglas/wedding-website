@@ -1,6 +1,7 @@
 ---
+import { Image } from '@astrojs/image/components';
 import Layout from '@layouts/Layout.astro';
-import Card from '@components/Card.astro';
+import Button from '@components/Button.astro';
 
 import hotelLeveque from '@assets/hotel-leveque.webp';
 import acHotel from '@assets/ac-hotel.webp';
@@ -8,21 +9,55 @@ import acHotel from '@assets/ac-hotel.webp';
 
 <Layout page="Travel">
   <div class="max-w-2xl px-5 mx-auto space-y-3 text-center">
-    <Card
-      title="Hotel Leveque"
-      image={hotelLeveque}
-      alt=""
-      address="50 W Broad St, Columbus, OH 43215, USA"
-      phone="(614) 224-9500"
-      website="https://www.hotellevequecolumbus.com"
-    />
-    <Card
-      title="AC Hotel by Marriott"
-      image={acHotel}
-      alt=""
-      address="517 Park St, Columbus, OH 43215, USA"
-      phone="(614) 227-6100"
-      website="https://www.marriott.com/hotels/travel/cmhad-ac-hotel-columbus-downtown"
-    />
+    <p class="py-4 max-w-prose leading-7 tracking-wide opacity-90">
+      If you're flying to Columbus, both hotels are a 10-minute car ride away
+      from John Glenn Columbus International Airport. The links below can be
+      used to book a room in the Sween/Douglas wedding block any time before
+      <b>Feburary 9th, 2023</b>.
+    </p>
+
+    <div class="px-5 pt-1 text-center">
+      <h2
+        class="uppercase font-bold my-7 text-2xl sm:text-3.5xl leading-normal tracking-lg"
+      >
+        AC Hotel by Marriott
+      </h2>
+      <Image src={acHotel} aspectRatio="4:3" alt="" />
+      <div class="my-4 space-y-2 leading-none sm:text-xl tracking-sm">
+        <a href="https://g.page/ac-hotel-columbus-downtown-oh" target="_blank">
+          517 Park St, Columbus, OH 43215, USA
+        </a>
+        <div>(614) 227-6100</div>
+      </div>
+      <div class="flex justify-center my-5">
+        <Button
+          href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1661175038058&key=GRP&app=resvlink"
+        >
+          Book Room
+        </Button>
+      </div>
+    </div>
+
+    <div class="px-5 pt-1 text-center">
+      <h2
+        class="uppercase font-bold my-7 text-2xl sm:text-3.5xl leading-normal tracking-lg"
+      >
+        Hotel Leveque
+      </h2>
+      <Image src={hotelLeveque} aspectRatio="4:3" alt="" />
+      <div class="my-4 space-y-2 leading-none sm:text-xl tracking-sm">
+        <a href="https://goo.gl/maps/eoSWwc8H3gozvqBc6" target="_blank">
+          50 W Broad St, Columbus, OH 43215, USA
+        </a>
+        <div>(614) 224-9500</div>
+      </div>
+      <div class="flex justify-center my-5">
+        <Button
+          href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1663173224468&key=GRP&app=resvlink"
+        >
+          Book Room
+        </Button>
+      </div>
+    </div>
   </div>
 </Layout>
