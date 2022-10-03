@@ -23,12 +23,14 @@ const { page } = Astro.props as Props;
 />
 <header class="text-center pb-2.5 px-[4%]">
   <h1
-    class="mt-8 mb-4 sm:mt-0 text-4xl sm:text-5.5xl font-bold tracking-xl leading-none uppercase"
+    class="mt-8 mb-4 sm:mt-0 text-4xl sm:text-5.5xl leading-tight font-bold tracking-xl uppercase"
   >
-    Kristen & Greg
+    Kristen <span class="block sm:inline">&</span> Greg
   </h1>
-  <div class="my-2 text-base leading-none sm:text-xl tracking-sm">
-    Saturday, March 11, 2023 • Columbus, OH
+  <div class="my-2 text-base sm:text-xl tracking-sm">
+    Saturday, March 11, 2023
+    <br class="sm:hidden" /><span class="hidden sm:inline-block">•</span>
+    Columbus, OH
   </div>
 </header>
 <Nav title={page} />
