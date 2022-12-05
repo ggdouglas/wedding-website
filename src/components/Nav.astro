@@ -8,6 +8,11 @@ const pages = [
   { path: '/schedule', title: 'Schedule' },
   { path: '/travel', title: 'Travel' },
   { path: '/things-to-do', title: 'Things to Do' },
+  {
+    path: 'https://www.zola.com/registry/kandg23',
+    target: '_blank',
+    title: 'Registry',
+  },
 ];
 
 export interface Props {
@@ -18,7 +23,7 @@ const { title } = Astro.props as Props;
 ---
 
 <div
-  class="fixed inset-x-0 top-0 z-10 flex items-center justify-center md:hidden bg-regal-blue h-14"
+  class="fixed inset-x-0 top-0 z-10 flex items-center justify-center md:hidden bg-off-white h-14"
 >
   <h2 class="sm:text-2xl font-bold uppercase tracking-lg">{title}</h2>
 </div>
@@ -34,15 +39,20 @@ const { title } = Astro.props as Props;
 
 <nav
   id="nav"
-  class="fixed inset-0 z-10 pt-[20vh] md:pt-0 md:mt-8 tracking-sm bg-regal-blue md:relative nav"
+  class="fixed inset-0 z-10 pt-[20vh] md:pt-0 md:mt-8 tracking-sm bg-off-white md:relative nav"
   data-visible="false"
 >
   <ul
-    class="flex flex-col gap-6 px-4 py-2 text-xl text-center md:gap-4 md:flex-row"
+    class="flex flex-col gap-6 px-4 py-2 text-lg text-center md:gap-4 md:flex-row"
   >
     {
-      pages.map(({ path, title }) => (
-        <NavLink title={title} href={path} active={path === pathname} />
+      pages.map(({ path, target, title }) => (
+        <NavLink
+          title={title}
+          href={path}
+          active={path === pathname}
+          target={target}
+        />
       ))
     }
   </ul>

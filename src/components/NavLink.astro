@@ -2,10 +2,11 @@
 export interface Props {
   active: boolean;
   href: string;
+  target?: string;
   title: string;
 }
 
-const { active, href, title } = Astro.props as Props;
+const { active, href, target, title } = Astro.props as Props;
 ---
 
 <li class="flex justify-center">
@@ -20,6 +21,7 @@ const { active, href, title } = Astro.props as Props;
       active ? 'border-current' : 'border-transparent',
     ]}
     href={href}
+    target={target}
   >
     {title}
   </a>

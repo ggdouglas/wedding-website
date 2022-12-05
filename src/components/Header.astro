@@ -12,7 +12,7 @@ const { page } = Astro.props as Props;
 ---
 
 <div class="h-14 md:hidden"></div>
-<Image
+<!-- <Image
   class="w-full select-none max-w-7xl"
   src={banner}
   aspectRatio={2023 / 405}
@@ -20,17 +20,19 @@ const { page } = Astro.props as Props;
   decoding="auto"
   draggable="false"
   alt=""
-/>
-<header class="text-center pb-2.5 px-[4%]">
+/> -->
+<Nav title={page} />
+<header class="text-center pb-2.5 px-[4%] pt-2 sm:pt-8">
   <h1
-    class="mt-8 mb-4 sm:mt-0 text-4xl sm:text-5.5xl leading-tight font-bold tracking-xl uppercase"
+    class="mb-4 sm:mt-0 text-4xl sm:text-5.5xl leading-tight font-bold tracking-xl uppercase"
   >
     Kristen <span class="block sm:inline">&</span> Greg
   </h1>
-  <div class="my-2 text-base sm:text-xl tracking-sm">
+  <div class="my-2 text-base sm:text-xl tracking-sm opacity-90">
     Saturday, March 11, 2023
-    <br class="sm:hidden" /><span class="hidden sm:inline-block">•</span>
+    <br class="sm:hidden" /><span class="hidden sm:inline-block text-stone-600"
+      >•</span
+    >
     Columbus, OH
   </div>
 </header>
-<Nav title={page} />
