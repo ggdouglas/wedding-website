@@ -19,14 +19,14 @@ const { address, alt, description, image, phone, title, website } =
 
 <div class="px-5 pt-1 text-center">
   <h2
-    class="uppercase font-bold my-7 text-2xl sm:text-3.5xl leading-normal tracking-lg"
+    class="my-7 text-2xl font-bold uppercase leading-normal tracking-lg sm:text-3.5xl"
   >
     {title}
   </h2>
   <Image src={image} aspectRatio="4:3" alt={alt} />
   {
     (address || phone) && (
-      <div class="my-4 space-y-2 leading-none sm:text-xl tracking-sm">
+      <div class="my-4 space-y-2 leading-none tracking-sm sm:text-xl">
         {address && <div>{address}</div>}
         {phone && <div>{phone}</div>}
       </div>
@@ -39,7 +39,7 @@ const { address, alt, description, image, phone, title, website } =
       </div>
     )
   }
-  <div class="flex justify-center my-5">
+  <div class="my-5 flex justify-center">
     <Button href={website}>Website</Button>
   </div>
 </div>

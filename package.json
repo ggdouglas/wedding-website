@@ -17,7 +17,8 @@
     "astro": "^1.6.12",
     "astro-compress": "^1.1.17",
     "prettier": "^2.8.0",
-    "prettier-plugin-astro": "^0.7.0"
+    "prettier-plugin-astro": "^0.7.0",
+    "prettier-plugin-tailwindcss": "^0.2.0"
   },
   "dependencies": {
     "@fontsource/nunito-sans": "^4.5.10",

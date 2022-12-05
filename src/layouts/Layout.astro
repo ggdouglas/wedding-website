@@ -28,8 +28,8 @@ const title = `Kristen & Greg${page ? ' | ' + page : ''}`;
       description="Welcome to Kristen Sween and Greg Douglas's Wedding Website!"
     />
   </head>
-  <body class="antialiased bg-off-white text-stone-800">
-    <div class="flex flex-col items-center min-h-screen">
+  <body class="bg-off-white text-stone-800 antialiased">
+    <div class="flex min-h-screen flex-col items-center">
       <Header page={page || 'K&G'} />
       <main class="py-4">
         <slot />

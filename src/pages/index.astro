@@ -3,39 +3,46 @@ import { Image } from '@astrojs/image/components';
 
 import Layout from '@layouts/Layout.astro';
 
-import kg1 from '@assets/kg1.jpeg';
-import hlchLogo from '@assets/hlch-logo.png';
+import cover from '@assets/cover.jpeg';
+import hlchLogo from '@assets/hlch-logo.webp';
 ---
 
 <Layout>
-  <Image src={kg1} />
+  <div class="relative w-screen overflow-hidden aspect-21/9">
+    <Image
+      class="absolute inset-x-0 bottom-0 grayscale-50"
+      aspectRatio={3 / 2}
+      src={cover}
+      alt=""
+    />
+    <div class="absolute inset-0 bg-orange-700 opacity-50 mix-blend-multiply">
+    </div>
+  </div>
   <div
-    class="px-4 mx-auto my-3 sm:mt-13 sm:mb-5 font-bold uppercase text-3.5xl sm:text-4.5xl leading-tight text-center tracking-lg"
+    class="w-screen px-4 mx-auto my-3 mt-10 text-2xl font-bold leading-tight text-center uppercase tracking-lg sm:mb-5 sm:text-3xl md:text-4xl"
   >
     <div
-      class="flex flex-col items-center justify-center divide-x-0 divide-y sm:divide-x sm:divide-y-0 divide-stone-400 sm:flex-row"
+      class="flex flex-col items-center justify-center divide-x-0 divide-y divide-stone-400 sm:flex-row sm:divide-x sm:divide-y-0"
     >
-      <div class="flex pb-5 px-9 sm:py-5 sm:pl-0 sm:pr-18 sm:w-80">
+      <div class="flex pb-5 sm:w-80 sm:py-5 sm:pr-10 md:pl-0 md:pr-18">
         March 11, 2023
       </div>
-      <div class="flex pt-5 sm:pb-5 px-9 sm:pr-0 sm:py-5 sm:pl-18 sm:w-80">
+      <div class="flex pt-5 sm:w-80 sm:py-5 sm:pb-5 sm:pl-10 md:pr-0 md:pl-18">
         Columbus<br />OH
       </div>
     </div>
   </div>
-  <div class="max-w-3xl px-5 m-auto md:p-0">
-    <div class="flex flex-col items-center mt-12 mb-6 text-center">
-      <div class="my-4 tracking-xs">
-        <a href="https://www.highlinecarhouse.com" target="_blank">
-          <Image
-            class="border-2 border-stone-900 w-32 m-auto mb-4"
-            src={hlchLogo}
-            alt="High Line Car House"
-          />
-        </a>
-        <div class="my-1 text-sm">550 South High Street</div>
-        <div class="my-1 text-sm">Columbus, OH, 43215, United States</div>
-      </div>
+  <div class="max-w-3xl py-8 m-auto text-sm text-center">
+    <a href="https://www.highlinecarhouse.com" target="_blank">
+      <Image
+        class="w-20 m-auto mb-4 border-2 border-stone-900 sm:w-32"
+        src={hlchLogo}
+        alt="High Line Car House"
+      />
+    </a>
+    <div class="leading-6 tracking-wider">
+      <div>550 South High Street</div>
+      <div>Columbus, OH, 43215, United States</div>
     </div>
   </div>
 </Layout>
