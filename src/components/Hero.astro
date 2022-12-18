@@ -1,0 +1,15 @@
+---
+import { Image } from '@astrojs/image/components';
+
+import cover from '@assets/cover.webp';
+---
+
+<div class="relative aspect-21/9 w-screen overflow-hidden">
+  <Image
+    class="absolute inset-x-0 bottom-0"
+    aspectRatio={3000 / 1286}
+    src={cover}
+    loading="eager"
+    alt=""
+  />
+</div>

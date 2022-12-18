@@ -1,0 +1,19 @@
+---
+import { Image } from '@astrojs/image/components';
+
+import hlchLogo from '@assets/hlch-logo.webp';
+---
+
+<div class="m-auto max-w-3xl py-8 text-center text-sm">
+  <a href="https://www.highlinecarhouse.com" target="_blank">
+    <Image
+      class="w-20 m-auto mb-4 border-2 border-stone-900 sm:w-32"
+      src={hlchLogo}
+      alt="High Line Car House"
+    />
+  </a>
+  <div class="leading-6 tracking-wider">
+    <div>550 South High Street</div>
+    <div>Columbus, OH, 43215, United States</div>
+  </div>
+</div>
