@@ -3,6 +3,8 @@ import { SEO } from 'astro-seo';
 
 import Footer from '@components/Footer.astro';
 import Header from '@components/Header.astro';
+import cover from '@assets/cover.webp';
+import { Image } from '@astrojs/image/components';
 
 import '@fontsource/nunito-sans/400.css';
 import '@fontsource/nunito-sans/600.css';
@@ -17,7 +19,15 @@ const { page } = Astro.props as Props;
 const title = `Kristen & Greg${page ? ' | ' + page : ''}`;
 ---
 
-<!DOCTYPE html>
+<script>
+  const root = document.documentElement;
+  const resizeObserver = new ResizeObserver((entries) => {
+    const width = entries?.[0]?.contentRect.width;
+    root.style.setProperty('--z', `-${width / 2000}px`);
+  });
+  resizeObserver.observe(root);
+</script>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -27,26 +37,30 @@ const title = `Kristen & Greg${page ? ' | ' + page : ''}`;
       title={title}
       description="Welcome to the wedding website of Kristen Sween and Greg Douglas. We're incredibly excited to gather with family and friends and celebrate."
     />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WM1CW256XN"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-
-      gtag('config', 'G-WM1CW256XN');
-    </script>
   </head>
   <body class="bg-off-white text-stone-800 antialiased">
-    <div class="flex min-h-screen flex-col items-center">
+    <div
+      class="h-screen overflow-x-hidden [perspective:1px] [transform-style:preserve-3d] [perspective-origin:center_top]"
+    >
       <Header page={page || 'K&G'} />
-      <main class="py-4">
+      {
+        page == null ? (
+          <Image
+            class="aspect-16/9 relative origin-center-top object-cover object-bottom"
+            style="transform:translateZ(var(--z)) scale(2)"
+            aspectRatio={3000 / 1286}
+            src={cover}
+            loading="eager"
+            alt=""
+          />
+        ) : (
+          <div class="py-10" />
+        )
+      }
+      <div class="relative bg-off-white">
         <slot />
-      </main>
-      <Footer />
+        <Footer />
+      </div>
     </div>
   </body>
 </html>

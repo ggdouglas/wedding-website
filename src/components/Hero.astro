@@ -4,7 +4,9 @@ import { Image } from '@astrojs/image/components';
 import cover from '@assets/cover.webp';
 ---
 
-<div class="relative aspect-21/9 w-screen overflow-hidden">
+<div
+  class="relative aspect-21/9 w-screen origin-center-top scale-200 overflow-hidden -translate-z-[1px]"
+>
   <Image
     class="absolute inset-x-0 bottom-0"
     aspectRatio={3000 / 1286}

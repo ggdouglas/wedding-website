@@ -7,9 +7,9 @@ export interface Props {
 const { page } = Astro.props as Props;
 ---
 
-<!-- px-[4%] pb-2.5 pt-2 sm:pt-8 -->
-<header class="flex flex-col items-center pt-14 text-center md:pt-8">
-  <!-- <div class="h-14 md:hidden"></div> -->
+<header
+  class="relative z-10 flex w-full flex-col items-center bg-off-white pt-14 pb-4 text-center md:pt-8"
+>
   <Nav title={page} />
   <h1
     class="my-4 text-4xl font-bold uppercase leading-tight tracking-xl sm:text-5.5xl"
