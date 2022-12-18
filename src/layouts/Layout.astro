@@ -39,28 +39,8 @@ const title = `Kristen & Greg${page ? ' | ' + page : ''}`;
     />
   </head>
   <body class="bg-off-white text-stone-800 antialiased">
-    <div
-      class="h-screen overflow-x-hidden [perspective:1px] [transform-style:preserve-3d] [perspective-origin:center_top]"
-    >
-      <Header page={page || 'K&G'} />
-      {
-        page == null ? (
-          <Image
-            class="aspect-16/9 relative origin-center-top object-cover object-bottom"
-            style="transform:translateZ(var(--z)) scale(2)"
-            aspectRatio={3000 / 1286}
-            src={cover}
-            loading="eager"
-            alt=""
-          />
-        ) : (
-          <div class="py-10" />
-        )
-      }
-      <div class="relative bg-off-white">
-        <slot />
-        <Footer />
-      </div>
-    </div>
+    <Header page={page || 'K&G'} />
+    <slot />
+    <Footer />
   </body>
 </html>

@@ -1,11 +1,26 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import cover from '@assets/cover.webp';
+import { Image } from '@astrojs/image/components';
 
 import DateLocationSection from '@components/DateLocationSection.astro';
 import Venue from '@components/Venue.astro';
 ---
 
+<script>
+  import simpleParallax from 'simple-parallax-js';
+  const image = document.getElementsByClassName('cover');
+  new simpleParallax(image, { scale: 1.4, orientation: 'down' });
+</script>
+
 <Layout>
+  <Image
+    class="cover aspect-21/9"
+    aspectRatio={3000 / 1286}
+    src={cover}
+    loading="eager"
+    alt=""
+  />
   <DateLocationSection />
   <Venue />
 </Layout>
