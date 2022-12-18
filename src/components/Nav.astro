@@ -23,14 +23,16 @@ const { title } = Astro.props as Props;
 ---
 
 <div
-  class="fixed inset-x-0 top-0 z-10 flex items-center justify-center h-14 bg-off-white md:hidden"
+  class="fixed inset-x-0 top-0 z-10 flex h-14 items-center justify-center bg-off-white md:hidden"
 >
-  <h2 class="font-bold uppercase tracking-lg sm:text-2xl">{title}</h2>
+  <h2 class="text-center font-bold uppercase tracking-lg sm:text-2xl">
+    {title}
+  </h2>
 </div>
 
 <button
   id="nav-toggle"
-  class="fixed z-20 w-10 h-10 bg-no-repeat bg-contain nav-toggle top-2 right-2 md:hidden"
+  class="nav-toggle fixed top-2 right-2 z-20 h-10 w-10 bg-contain bg-no-repeat md:hidden"
   aria-controls="nav"
   aria-expanded="false"
 >
@@ -39,11 +41,11 @@ const { title } = Astro.props as Props;
 
 <nav
   id="nav"
-  class="nav fixed inset-0 z-10 bg-off-white pt-[20vh] tracking-sm md:relative md:mt-8 md:pt-0"
+  class="nav fixed inset-0 z-10 bg-off-white/95 pt-14 tracking-sm backdrop-blur-sm md:relative md:pt-0"
   data-visible="false"
 >
   <ul
-    class="flex flex-col gap-6 px-4 py-2 text-lg text-center md:flex-row md:gap-4"
+    class="flex flex-col gap-6 px-4 py-2 text-center text-lg md:flex-row md:gap-4"
   >
     {
       pages.map(({ path, target, title }) => (
