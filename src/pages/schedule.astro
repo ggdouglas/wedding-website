@@ -2,42 +2,52 @@
 import { Image } from '@astrojs/image/components';
 import Layout from '@layouts/Layout.astro';
 
+import drinks from '@assets/lumin-logo.webp';
 import venue from '@assets/high-line-car-house.webp';
 ---
 
 <Layout page="Schedule">
-  <div
-    class="m-auto max-w-xl bg-orange-900 bg-opacity-75 py-4 text-center tracking-wide text-off-white sm:rounded sm:text-2xl"
-  >
-    Check back here soon. More details to follow!
+  <div class="m-auto my-4 max-w-lg border-b border-black border-opacity-10">
   </div>
-  <div class="px-6 pt-8 pb-4 text-center tracking-wide">
+  <div class="px-6 py-4 text-center tracking-wide">
     <h2 class="py-2 text-3xl">Friday, March 10th</h2>
+    <Image
+      class="mx-auto w-40 my-4 rounded grayscale brightness-0 opacity-75"
+      src={drinks}
+      aspectRatio="470:491"
+      alt=""
+    />
     <h3 class="py-3 text-xl">Welcome Drinks</h3>
     <p class="mx-auto max-w-prose leading-7 opacity-80">
-      Please join us for welcome drinks starting at 8pm at the Lumin Skybar on
-      the rooftop of the AC Hotel.
+      Please join us for welcome drinks starting at <b>8pm</b> at the <a
+        class="underline"
+        href="https://www.luminskybar.com"
+        target="_blank">Lumin Skybar</a
+      > on the top floor of the <a class="underline" href="/travel#ac"
+        >AC Hotel Columbus</a
+      >.
     </p>
+  </div>
+  <div class="m-auto my-4 max-w-lg border-b border-black border-opacity-10">
   </div>
   <div class="px-6 py-4 text-center tracking-wide">
     <h2 class="py-2 text-3xl">Saturday, March 11th</h2>
     <Image
-      class="mx-auto max-w-sm w-full my-4 rounded"
+      class="mx-auto w-80 my-4 rounded"
       src={venue}
       aspectRatio="1:1"
       alt=""
     />
     <h3 class="py-3 text-xl">Wedding & Reception</h3>
     <p class="mx-auto max-w-prose pb-6 leading-7 opacity-80">
-      The wedding and reception will be held at
+      The wedding and reception will take place at <b>5:30pm</b> at
       {' '}
       <a
         class="underline"
         href="https://www.highlinecarhouse.com"
-        target="_blank"
-      >
-        High Line Car House</a
-      >. There will be transportation provided to and from the venue.
+        target="_blank">High Line Car House</a
+      >. Transportation will be provided to and from the venue from both hotels.
+      Shuttle information will be provided upon check-in.
     </p>
   </div>
 </Layout>
